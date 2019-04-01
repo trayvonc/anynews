@@ -1,0 +1,83 @@
+/* pages/usercenter/usercenter.wxss */
+page {
+  background-color: #f2f2f2;
+  height: 100%;
+}
+.userinfo {  
+  position: relative; 
+  left:20rpx; 
+  width: 750rpx;  
+  height: 200rpx;  
+  color: #999999; 
+  font-size: 42rpx; 
+  display: flex;  
+  flex-direction: row;  
+  align-items: center;  
+}  
+  
+.userinfo-avatar {  
+  overflow:hidden;  
+  display: block;
+  width: 160rpx;  
+  height: 160rpx;  
+  margin: 20rpx;  
+  margin-top: 50rpx;  
+  border-radius: 10%;  
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+.user__name{
+    position: absolute;
+    top: 80rpx;
+    left: 200rpx;
+    right: 44rpx;
+    width: 700rpx;
+    height: 80rpx;
+}
+.widget{
+    position: relative;
+    border-color: black;
+    top: 80rpx;
+    height: 120rpx;
+    background-color: #ffffff;
+}
+.widget__name{
+    color:black;
+    font-size: 32rpx;
+    position: absolute;
+    top: 50rpx;
+    left: 70rpx;
+    width: 720rpx;
+    height: 32rpx;
+    
+}
+.widget__arrow{
+    position: absolute;
+    top: 55rpx;
+    right: 20rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+.widget__line{
+    content: " ";
+    position: relative;
+    top: 0;
+    height: 25rpx;
+    background-color: #f2f2f2;
+}
+
+.nickname{
+  position: relative;
+  
+  top:60rpx;
+  left:20rpx;
+  height: 32rpx;
+}
+
+.widget__icon{
+    position: absolute;
+    top: 55rpx;
+    left: 20rpx;
+    width: 38rpx;
+    height: 38rpx;
+}

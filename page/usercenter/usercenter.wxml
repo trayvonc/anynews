@@ -1,0 +1,47 @@
+<!-- pages/usercenter/usercenter.wxml -->
+<view>
+    <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
+    <view class="userinfo">
+        <view class="userinfo-avatar">
+            <open-data type="userAvatarUrl"></open-data>  
+        </view>
+        <open-data class="nickname" type="userNickName"></open-data>
+    </view>
+        
+        <view class="section">
+          <view class="flex-wrp" style="height: 800px;flex-direction:column;">
+             <navigator url="/page/usercenter/collect/collect" class="widget">
+                           <image class="widget__icon" src="/image/collect.png" mode="aspectFill" />
+                            <text class="widget__name">收藏</text>
+                            <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" />
+                            <view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+             </navigator>
+
+             <navigator url="/page/usercenter/comment/comment" class="widget">
+                            <image class="widget__icon" src="/image/comment.png" mode="aspectFill" />
+                            <text class="widget__name">评论</text>
+                            <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" />
+                            <view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+             </navigator>
+             <!-- <navigator url="https://www.anyknew.com" class="widget">
+                            <text class="widget__name">点赞</text>
+                            <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" />
+                            <view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+             </navigator> -->
+             <navigator url="https://www.anyknew.com" class="widget">
+                            <image class="widget__icon" src="/image/share.png" mode="aspectFill" />
+                            <text class="widget__name">分享小程序</text>
+                            <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" />
+                            <view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+             </navigator>
+             <navigator url="https://www.anyknew.com" class="widget">
+                            <image class="widget__icon" src="/image/gm.png" mode="aspectFill" />
+                            <text class="widget__name">关于制作者</text>
+                            <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" />
+                            <view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+             </navigator>
+
+          </view>
+        </view>
+        
+    </view>

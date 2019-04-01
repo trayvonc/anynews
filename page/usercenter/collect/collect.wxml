@@ -1,0 +1,16 @@
+<scroll-view scroll-y="{{isScroll}}" style='height:{{windowHeight}}px'>
+    <block wx:key="item" wx:for="{{data}}">
+    <view data-index='{{index}}' class="order-item" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx">
+        <text class="seq">{{index+1}}.  </text>
+        <text class="content">{{item.content}}</text>
+        
+        <view class="remove" bindtap="delItem" data-index="{{index}}">删除</view>
+        <view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+    </view>
+    </block>
+<view class="foot">
+<view class="left"><image style="text-align:center" class="leftpage_img" src="/image/arrowright.png" mode="aspectFill" /> </view>
+<view class="right"><image style="text-align:center" class="rightpage_img" src="/image/arrowright.png" mode="aspectFill" /> </view>
+</view>
+
+</scroll-view>

@@ -1,0 +1,69 @@
+<scroll-view class="index" scroll-y="{{isScroll}}" scroll-into-view="{{toView}}"style="height: 10rpx;">
+
+  <view class="webinfo">
+    <view class="head">
+      <view class="title">AnyNews</view>
+      <view class="desc">高效读新闻，5分钟遍历全网热点</view>
+      <view class="desc_highlight">#提示:长按新闻复制链接，左滑收藏和评论#</view>
+    </view>
+    <view>
+    <!-- <image class="web__info-img" src="" mode="aspectFill" /> -->
+    </view>
+  </view>
+
+  <view class="body">
+  <view>
+  <!--<text class="type">  综合类</text>-->
+    <view class="widgets">
+      <block wx:for-items="{{list}}" wx:key="index" wx:for-index="aindex">
+        <view class="widgets__item">
+          <view id="{{item.id}}" class="widgets__info {{item.open ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle" data-wordindex="{{wordindex}}">
+          <image src="https://f0cdn.anyknew.com/static/logo/{{item.img_name}}" class="widgets_img"></image>
+            <text class="widgets__info-name">{{item.name}}</text>
+            <text class="widgets__info-page" wx:if="{{item.open&&item.len/7%1>0}}">{{item.pagedirect+1}} / {{item.len/7-item.len/7%1+1}}</text>
+            <text class="widgets__info-page" wx:if="{{item.open&&item.len/7%1==0}}">{{item.pagedirect+1}} / {{item.len/7}}</text>
+            <button id="{{item.id}}leftt" class="widgets_button_left" type="default" size="mini" hidden="{{item.disabled1}}" loading="{{loading}}" plain="{{plain}}" catchtap="tapButton" hover-class="green">上一页 </button>
+             
+            <button id="{{item.id}}right" class="widgets_button_right" type="default" size="mini" hidden="{{item.disabled2}}" loading="{{loading}}" plain="{{plain}}" catchtap="tapButton" hover-class="green">下一页 </button>
+            <image class="widgets__info-img" src="/image/arrowright.png" mode="aspectFill" />
+          </view>
+          <view class="widgets__list {{item.open ? 'widgets__list_show' : ''}}">
+
+
+            <block wx:for-items="{{item.shows}}" wx:for-item="page" wx:for-index="bindex" wx:key="index1">
+              <view class="widget" selectable='true' catchlongpress='copy'  data-bindex="{{bindex}}" data-aindex="{{aindex}}" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right[bindex]}}rpx">
+                <view bindtap="commentItem" data-bindex="{{bindex}}" data-aindex="{{aindex}}" >
+                  <text class="seq_highlight" wx:if="{{bindex+item.pagedirect*7+1<=3}}">{{bindex+item.pagedirect*7+1}}.  </text>
+                  <text class="seq" wx:else>{{bindex+item.pagedirect*7+1}}.  </text>
+                  <text class="widget__name">{{page}}</text>
+                  <text class="new_tag" wx:if="{{item.newtag[bindex]}}">新</text>
+                </view>
+                
+                <view bindtap="commentItem" data-bindex="{{bindex}}" data-aindex="{{aindex}}" >
+                <text class="hot__name">{{item.hotname}}{{item.hot[bindex]}}</text>
+                </view>
+                <!-- <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" /> -->
+                <view class="widget__line {{index == 0 ? 'widget__line_first' : ''}}"></view>
+                <view class="comment" bindtap="commentItem"data-bindex="{{bindex}}" data-aindex="{{aindex}}">评论</view>
+                <view class="collect" bindtap="collectItem"data-bindex="{{bindex}}" data-aindex="{{aindex}}">收藏</view>
+              </view>
+            </block>
+
+
+
+
+
+          </view>
+        </view>
+      </block>
+    </view>
+    </view>
+  </view>
+
+
+  <view class="footer">
+    <text class="footer_copy">©2019  Trayvon_Chan All Right Reserved</text>
+    
+    </view>
+    <!-- <image class="ft_img" src="" mode="aspectFill" /> -->
+</scroll-view>

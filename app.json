@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "page/component/index",
+    "page/component/wx-server-sdk",
+    "page/usercenter/usercenter",
+    "page/usercenter/collect/collect",
+    "page/usercenter/detail/detail",
+    "page/usercenter/comment/comment"
+
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "5分钟热点",
+    "navigationBarBackgroundColor": "#fafafa",
+    "backgroundColor": "#fbf9fe"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#07C160",
+    "borderStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "list": [{
+      "pagePath": "page/component/index",
+      "iconPath": "image/news.png",
+      "selectedIconPath": "image/news_s.png",
+      "text": "新闻"
+    }, {
+      "pagePath": "page/usercenter/usercenter",
+      "iconPath": "image/user.png",
+      "selectedIconPath": "image/user_s.png",
+      "text": "我"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
